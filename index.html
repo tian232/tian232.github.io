@@ -90,7 +90,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">5</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -170,7 +170,18 @@
       </div>
       <div class="article-entry">
         
-          
+          <h5 id="对于中文乱码的处理，注意几点"><a href="#对于中文乱码的处理，注意几点" class="headerlink" title="对于中文乱码的处理，注意几点:"></a>对于中文乱码的处理，注意几点:</h5><p>注册页面数据提交方式为post不能忘了写，</p>
+<p>页面编码方式为gbk,</p>
+<p>处理提交信息的doRegister.jsp要加request.setCharacterEncoding(“gbk”);</p>
+<p><img src="https://img-blog.csdn.net/20141018202659173?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZG9uZ2xpYW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
+<h5 id="register-jsp"><a href="#register-jsp" class="headerlink" title="register.jsp"></a>register.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"gbk"</span>%&gt;</span><br><span class="line">&lt;html&gt;  </span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;注册页面&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;center&gt;</span><br><span class="line">        &lt;h3&gt;欢迎注册该网站&lt;/h3&gt;</span><br><span class="line">        &lt;form action=<span class="string">"doRegister.jsp"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">            &lt;table&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;用户名&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="text" name="user"&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;密码&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="password" name="pwd"&gt;密码不得少于6位&lt;/td&gt;          					&lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;性别&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=<span class="string">"radio"</span> name=<span class="string">"sex"</span> value=<span class="string">"男"</span>&gt;男</span><br><span class="line">                        &lt;input type=<span class="string">"radio"</span> name=<span class="string">"sex"</span> value=<span class="string">"女"</span>&gt;女</span><br><span class="line">                    &lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;擅长的语言&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="checkbox" name="checkbox1" value="C"&gt;C&lt;/td&gt;            				 &lt;td&gt;&lt;input type="checkbox" name="checkbox1" value="Java"&gt;Java&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="checkbox" name="checkbox1" value="C#"&gt;C#&lt;/td&gt;            				 &lt;td&gt;&lt;input type="checkbox" name="checkbox1" value="Ruby"&gt;Ruby&lt;/td&gt;            			  &lt;td&gt;&lt;input type="checkbox" name="checkbox1" value="PHP"&gt;PHP&lt;/td&gt;          		   &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="submit" value="注册"&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="reset" value="取消"&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/table&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">        &lt;/center&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="处理注册信息页面"><a href="#处理注册信息页面" class="headerlink" title="处理注册信息页面"></a>处理注册信息页面</h5><h5 id="doRegister-jsp"><a href="#doRegister-jsp" class="headerlink" title="doRegister.jsp"></a>doRegister.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"gbk"</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;处理用户注册信息&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;保存用户信息&lt;/h3&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">        request.setCharacterEncoding(<span class="string">"gbk"</span>);</span><br><span class="line">        String user=request.getParameter(<span class="string">"user"</span>);</span><br><span class="line">        String pwd=request.getParameter(<span class="string">"pwd"</span>);</span><br><span class="line">        <span class="keyword">if</span>(user.equals(<span class="string">""</span>)||pwd.equals(<span class="string">""</span>))&#123;</span><br><span class="line">            out.println(<span class="string">"用户名或密码不能为空!请重新注册"</span>);</span><br><span class="line">            response.setHeader(<span class="string">"refresh"</span>, <span class="string">"3;url=register.jsp"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pwd.length()&lt;<span class="number">6</span>)&#123;</span><br><span class="line">            out.println(<span class="string">"密码不能少于6位!请重新注册"</span>);</span><br><span class="line">            response.setHeader(<span class="string">"refresh"</span>, <span class="string">"3;url=register.jsp"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            session.setAttribute(<span class="string">"user"</span>,user);</span><br><span class="line">            session.setAttribute(<span class="string">"pwd"</span>,pwd);</span><br><span class="line">            String xingbie=request.getParameter(<span class="string">"sex"</span>);</span><br><span class="line">            session.setAttribute(<span class="string">"sex"</span>, xingbie);</span><br><span class="line">            String[] str=(String[])request.getParameterValues(<span class="string">"checkbox1"</span>);</span><br><span class="line">            session.setAttribute(<span class="string">"zhuanchang"</span>, str);</span><br><span class="line">            response.sendRedirect(<span class="string">"showRegisterInfo.jsp"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="注册成功，显示信息页面"><a href="#注册成功，显示信息页面" class="headerlink" title="注册成功，显示信息页面"></a>注册成功，显示信息页面</h5><p><img src="https://img-blog.csdn.net/20141018201021551?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZG9uZ2xpYW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
+<h5 id="showRegisterInfo-jsp"><a href="#showRegisterInfo-jsp" class="headerlink" title="showRegisterInfo.jsp"></a>showRegisterInfo.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"gbk"</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;显示用户注册信息&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;恭喜你，注册成功&lt;/h3&gt;</span><br><span class="line">        &lt;h3&gt;你的注册信息为:&lt;/h3&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">        String username=(String)session.getAttribute(<span class="string">"user"</span>);</span><br><span class="line">        out.println(<span class="string">"用户名:"</span>+<span class="string">" "</span>+username+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        String password=(String)session.getAttribute(<span class="string">"pwd"</span>);</span><br><span class="line">        out.println(<span class="string">"密码:"</span>+<span class="string">" "</span>+password+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        String sex=(String)session.getAttribute(<span class="string">"sex"</span>);</span><br><span class="line">        out.println(<span class="string">"性别:"</span>+<span class="string">" "</span>+sex+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        String[] zhuanchang=(String[])session.getAttribute(<span class="string">"zhuanchang"</span>);</span><br><span class="line">        out.print(<span class="string">"擅长的语言:"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;zhuanchang.length;i++)</span><br><span class="line">            out.print(<span class="string">" "</span>+zhuanchang[i]);</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
         
       </div>
     </div>
@@ -651,54 +662,6 @@
 <p>继承Thread类</p>
 <p>2.同步的关键字是什么</p>
 <p>synchronized</p>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/09/hello-world/">
-  Hello World
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/09/hello-world/"><span class="article-date">
-  2019-10-09
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         
       </div>
