@@ -1,181 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="某某的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
   
-    JSP中使用JDBC连接MySQL数据库的详细步骤
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
   
-</title>
-
-<meta name="description" content="1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。 2，继续单击下一步3，把Generate web.xml deployment descriptor复选框勾上。 4，单击Finish,完成Web project工程的创建。 5，打开MyEclipse Datebase Explore,如图所示 6，按图中所示填写各项内容，并通过Add JARS添加相应的数据库驱">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JSP中使用JDBC连接MySQL数据库的详细步骤">
-<meta property="og:url" content="http://yoursite.com/2019/10/30/JSP中使用JDBC连接MySQL数据库的详细步骤/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。 2，继续单击下一步3，把Generate web.xml deployment descriptor复选框勾上。 4，单击Finish,完成Web project工程的创建。 5，打开MyEclipse Datebase Explore,如图所示 6，按图中所示填写各项内容，并通过Add JARS添加相应的数据库驱">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220171258354-1819817274.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172010620-797584555.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172346620-1646108239.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172724823-2087101492.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220175845479-697798442.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220180159198-1096354241.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220180748026-830631880.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220181809542-2033797471.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220184326011-1679509427.png">
-<meta property="og:updated_time" content="2019-10-30T12:09:39.818Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP中使用JDBC连接MySQL数据库的详细步骤">
-<meta name="twitter:description" content="1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。 2，继续单击下一步3，把Generate web.xml deployment descriptor复选框勾上。 4，单击Finish,完成Web project工程的创建。 5，打开MyEclipse Datebase Explore,如图所示 6，按图中所示填写各项内容，并通过Add JARS添加相应的数据库驱">
-<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220171258354-1819817274.png">
-
-
-  <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-
-
-
-  <link rel="icon" href="/favicon.png">
-
-
-<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="/styles/main.css">
-
-
-
-
-
-
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>JSP中使用JDBC连接MySQL数据库的详细步骤</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
 </head>
-<body class="monochrome">
-  <div class="mobile-header">
-  <button class="sidebar-toggle" type="button">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="title" href="/">Hexo</a>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">Hexo</a>
+  <a class="face-img" href="/">
+    <img src="https://tva3.sinaimg.cn/crop.0.0.200.200.180/005Kc3C1jw8f2uep0hhkvj305k05k3yk.jpg">
+  </a>
 </div>
-
-  <div class="main-container">
-    <div class="sidebar">
-  <div class="header">
-    <h1 class="title"><a href="/">Hexo</a></h1>
+<main>
+  <div class="article-title">
     
-    <div class="info">
+  
+  <h1 class="title">
+    JSP中使用JDBC连接MySQL数据库的详细步骤
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-10-30T11:52:53.000Z" itemprop="datePublished">2019-10-30</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-10-30T12:09:39.818Z" itemprop="dateUpdated">2019-10-30</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
       <div class="content">
         
-        
-          <div class="author">John Doe</div>
-        
-      </div>
-      
-        <div class="avatar">
-          
-            <a href="/about"><img src="https://cn.gravatar.com/avatar/35fef74d731255cd569c2c2b0b9e87e4?s=200"></a>
-          
-        </div>
-      
-    </div>
-  </div>
-  <div class="body">
-    
-      
-        <ul class="nav">
-          
-            
-              <li class="category-list-container">
-                <a href="javascript:;">Category</a>
-                
-              </li>
-            
-          
-            
-              <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
-                
-              </li>
-            
-          
-            
-              <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">6</span></li></ul>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="/" title="Homepage">Homepage</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/archives" title="By Year">By Year</a>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="noopener">Chan</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="https://github.com/denjones" title="Github" target="_blank" rel="noopener">Github</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/atom.xml" title="RSS">RSS</a>
-              </li>
-            
-          
-        </ul>
-      
-    
-  </div>
-</div>
-
-    <div class="main-content">
-      
-        <div style="max-width: 1000px">
-      
-          <article id="post-JSP中使用JDBC连接MySQL数据库的详细步骤" class="article article-type-post">
-  
-    <h1 class="article-header">
-      JSP中使用JDBC连接MySQL数据库的详细步骤
-    </h1>
-  
-  
-
-  <div class="article-info">
-    <span class="article-date">
-  2019-10-30
-</span>
-
-    
-
-    
-
-  </div>
-  <div class="article-entry">
-    <h5 id="1，首先在自己新建的项目文本框中输入Web-Project的名称，然后单击下一步。"><a href="#1，首先在自己新建的项目文本框中输入Web-Project的名称，然后单击下一步。" class="headerlink" title="1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。"></a>1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。</h5><p><img src="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220171258354-1819817274.png" alt="img"></p>
+        <h5 id="1，首先在自己新建的项目文本框中输入Web-Project的名称，然后单击下一步。"><a href="#1，首先在自己新建的项目文本框中输入Web-Project的名称，然后单击下一步。" class="headerlink" title="1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。"></a>1，首先在自己新建的项目文本框中输入Web Project的名称，然后单击下一步。</h5><p><img src="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220171258354-1819817274.png" alt="img"></p>
 <h5 id="2，继续单击下一步"><a href="#2，继续单击下一步" class="headerlink" title="2，继续单击下一步"></a>2，继续单击下一步</h5><h5 id="3，把Generate-web-xml-deployment-descriptor复选框勾上。"><a href="#3，把Generate-web-xml-deployment-descriptor复选框勾上。" class="headerlink" title="3，把Generate web.xml deployment descriptor复选框勾上。"></a>3，把Generate web.xml deployment descriptor复选框勾上。</h5><p><img src="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172010620-797584555.png" alt="img"></p>
 <h5 id="4，单击Finish-完成Web-project工程的创建。"><a href="#4，单击Finish-完成Web-project工程的创建。" class="headerlink" title="4，单击Finish,完成Web project工程的创建。"></a>4，单击Finish,完成Web project工程的创建。</h5><p><img src="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172346620-1646108239.png" alt="img"></p>
 <h5 id="5，打开MyEclipse-Datebase-Explore-如图所示"><a href="#5，打开MyEclipse-Datebase-Explore-如图所示" class="headerlink" title="5，打开MyEclipse Datebase Explore,如图所示"></a>5，打开MyEclipse Datebase Explore,如图所示</h5><p><img src="http://images2015.cnblogs.com/blog/1082678/201612/1082678-20161220172724823-2087101492.png" alt="img"></p>
@@ -191,119 +88,98 @@
 <p>  taskkill /pid 7659 /F</p>
 <p>  即可删除对应的进程。</p>
 
-  </div>
-  <footer class="article-footer">
-    
-  <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.e" target="_blank" title="Attribution-ShareAlike">
-      <img src="/images/cc/cc.png">
-      
-          <img src="/images/cc/by.png">
-        
-          <img src="/images/cc/sa.png">
-      
-      <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-      </span>
-    </a>
-  </div>
-
-
-    
-
-  </footer>
-</article>
-
-
-
-
-
-
-
-          <div class="main-footer">
-  
-    © 2019 Hexo - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
-  
-</div>
-
-      
-        </div>
-      
-    </div>
-  </div>
-  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
-  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
-
-  <!-- Root element of PhotoSwipe. Must have class pswp. -->
-  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe.
-             It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-      <!-- Container that holds slides.
-                PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                Don't modify these 3 pswp__item elements, data is added later on. -->
-      <div class="pswp__container">
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
       </div>
-
-      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-      <div class="pswp__ui pswp__ui--hidden">
-
-        <div class="pswp__top-bar">
-
-          <!--  Controls are self-explanatory. Order can be changed. -->
-
-          <div class="pswp__counter"></div>
-
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-          <button class="pswp__button pswp__button--share" title="Share"></button>
-
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-          <!-- element will get class pswp__preloader--active when preloader is running -->
-          <div class="pswp__preloader">
-            <div class="pswp__preloader__icn">
-              <div class="pswp__preloader__cut">
-                <div class="pswp__preloader__donut"></div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
               </div>
+              <span id="likes-count">256</span>
             </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
           </div>
         </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
 
-        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-          <div class="pswp__share-tooltip"></div>
-        </div>
+  gitalk.render('comments');
+</script>
 
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
 
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-
-        <div class="pswp__caption">
-          <div class="pswp__caption__center"></div>
         </div>
       </div>
     </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 某某的博客 京ICP备xxxxxx号</p>
   </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  <script src="/PhotoSwipe/photoswipe.js"></script>
-  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
 
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
 
-<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
-<script src="/scripts/main.js"></script>
-
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
 </body>
 </html>
